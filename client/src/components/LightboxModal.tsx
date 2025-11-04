@@ -58,10 +58,34 @@ export default function LightboxModal({
           </Button>
         </div>
 
+        {/* Navigation Buttons - At far edges */}
+        {hasPrev && (
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute left-2 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 rounded-full h-12 w-12 z-50"
+            onClick={handlePrev}
+            data-testid="button-prev-item"
+          >
+            <ChevronLeft className="h-8 w-8" />
+          </Button>
+        )}
+        {hasNext && (
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute right-2 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 rounded-full h-12 w-12 z-50"
+            onClick={handleNext}
+            data-testid="button-next-item"
+          >
+            <ChevronRight className="h-8 w-8" />
+          </Button>
+        )}
+
         {/* Main Content Area */}
-        <div className="relative h-full flex items-center justify-center px-16 md:px-24 py-16">
+        <div className="h-full flex items-center justify-center px-16 md:px-20 py-16">
           {/* Image */}
-          <div className="relative max-w-full max-h-full flex items-center justify-center">
+          <div className="max-w-full max-h-full flex items-center justify-center">
             {item.category === "video" ? (
               <div className="relative w-full max-w-5xl aspect-video bg-black rounded-md overflow-hidden">
                 <img
@@ -83,30 +107,6 @@ export default function LightboxModal({
               />
             )}
           </div>
-
-          {/* Navigation Buttons - Outside the image */}
-          {hasPrev && (
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 rounded-full h-12 w-12"
-              onClick={handlePrev}
-              data-testid="button-prev-item"
-            >
-              <ChevronLeft className="h-8 w-8" />
-            </Button>
-          )}
-          {hasNext && (
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 rounded-full h-12 w-12"
-              onClick={handleNext}
-              data-testid="button-next-item"
-            >
-              <ChevronRight className="h-8 w-8" />
-            </Button>
-          )}
         </div>
 
         {/* Info Footer */}
