@@ -2,6 +2,8 @@ import { useState } from "react";
 import Hero from "@/components/Hero";
 import PortfolioGrid, { PortfolioItem } from "@/components/PortfolioGrid";
 import LightboxModal from "@/components/LightboxModal";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
 import heroImage from "@assets/generated_images/Hero_background_creative_workspace_e441edce.png";
 import photo1 from "@assets/generated_images/Portfolio_photo_one_e81dbf2f.png";
 import photo2 from "@assets/generated_images/Portfolio_photo_two_c5450fca.png";
@@ -10,6 +12,8 @@ import art1 from "@assets/generated_images/Portfolio_art_one_ec5a7bbc.png";
 import art2 from "@assets/generated_images/Portfolio_art_two_9328d591.png";
 import art3 from "@assets/generated_images/Portfolio_art_three_120923c4.png";
 import video1 from "@assets/generated_images/Portfolio_video_thumbnail_78fc26ef.png";
+import member1 from "@assets/generated_images/About_team_member_one_c705b478.png";
+import member2 from "@assets/generated_images/About_team_member_two_e1cd077d.png";
 
 // TODO: remove mock functionality - replace with real data
 const portfolioItems: PortfolioItem[] = [
@@ -67,6 +71,21 @@ const portfolioItems: PortfolioItem[] = [
   },
 ];
 
+const teamMembers = [
+  {
+    name: "Sarah Mitchell",
+    role: "Lead Photographer & Co-Founder",
+    bio: "Capturing authentic moments through a lens of creativity and passion. 10+ years experience in editorial and commercial photography with work featured in major publications.",
+    image: member1,
+  },
+  {
+    name: "Marcus Chen",
+    role: "Creative Director & Co-Founder",
+    bio: "Bringing visions to life through video and motion. Specialized in cinematic storytelling and brand narratives with a focus on emotional connection and visual impact.",
+    image: member2,
+  },
+];
+
 export default function Home() {
   const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -98,7 +117,19 @@ export default function Home() {
         title="Visual Storytelling"
         subtitle="Capturing moments through photography, video, and art. A creative agency bringing your vision to life."
       />
-      <PortfolioGrid items={portfolioItems} onItemClick={handleItemClick} />
+      <div id="portfolio">
+        <PortfolioGrid items={portfolioItems} onItemClick={handleItemClick} />
+      </div>
+      <div id="about">
+        <About
+          title="Meet The Team"
+          description="We are a collective of artists, photographers, and storytellers united by our passion for visual creativity. Our work blends technical excellence with artistic vision to create compelling narratives that resonate."
+          teamMembers={teamMembers}
+        />
+      </div>
+      <div id="contact">
+        <Contact />
+      </div>
       <LightboxModal
         isOpen={isLightboxOpen}
         onClose={() => setIsLightboxOpen(false)}
