@@ -1,10 +1,7 @@
-import { createRoot } from "react-dom/client";
-import { Router } from "wouter";
-import App from "./App";
-import "./index.css";
+import { Link } from "wouter";
 
-createRoot(document.getElementById("root")!).render(
-  <Router>
-    <App />
-  </Router>
-);
+// good: router will prepend "/mandalamoon"
+<Link href="/">Home</Link>
+<Link href="/portfolio">Portfolio</Link>
+<Link href="/about">About</Link>
+<Link href="/contact">Contact</Link>
