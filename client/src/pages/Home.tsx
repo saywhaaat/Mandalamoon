@@ -71,20 +71,12 @@ const portfolioItems: PortfolioItem[] = [
   },
 ];
 
-const teamMembers = [
-  {
-    name: "Sarah Mitchell",
-    role: "Lead Photographer & Co-Founder",
-    bio: "Capturing authentic moments through a lens of creativity and passion. 10+ years experience in editorial and commercial photography with work featured in major publications.",
-    image: member1,
-  },
-  {
-    name: "Marcus Chen",
-    role: "Creative Director & Co-Founder",
-    bio: "Bringing visions to life through video and motion. Specialized in cinematic storytelling and brand narratives with a focus on emotional connection and visual impact.",
-    image: member2,
-  },
-];
+const artist = {
+  name: "Jordan Moon",
+  role: "Visual Artist & Creative Director",
+  bio: "A multidisciplinary visual artist specializing in photography, video production, and contemporary art. With over a decade of experience capturing stories through various mediums, I blend technical expertise with creative vision to craft compelling visual narratives. My work has been featured in galleries and publications worldwide, exploring themes of light, emotion, and the human experience.",
+  image: member1,
+};
 
 export default function Home() {
   const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
@@ -122,9 +114,12 @@ export default function Home() {
       </div>
       <div id="about">
         <About
-          title="Meet The Team"
-          description="We are a collective of artists, photographers, and storytellers united by our passion for visual creativity. Our work blends technical excellence with artistic vision to create compelling narratives that resonate."
-          teamMembers={teamMembers}
+          title="About"
+          description="Visual storytelling through the lens of creativity and passion. Every image tells a story, every frame captures a moment."
+          name={artist.name}
+          role={artist.role}
+          bio={artist.bio}
+          image={artist.image}
         />
       </div>
       <div id="contact">
