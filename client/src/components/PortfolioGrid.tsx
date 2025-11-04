@@ -60,10 +60,10 @@ export default function PortfolioGrid({ items, onItemClick }: PortfolioGridProps
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-serif font-light mb-6">
-            Our Portfolio
+            Portfolio
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Explore our creative work spanning photography, video production, and contemporary art
+            Creative work spanning photography, video production, and contemporary art
           </p>
         </div>
 
