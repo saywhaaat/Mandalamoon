@@ -18,6 +18,7 @@ const portfolioItems: PortfolioItem[] = [
     image: photo1,
     title: "Editorial Portrait",
     category: "photo",
+    subcategory: "Fashion",
     description: "A stunning editorial portrait captured in natural light with dramatic shadows and high contrast",
   },
   {
@@ -25,6 +26,7 @@ const portfolioItems: PortfolioItem[] = [
     image: photo2,
     title: "Golden Hour Vista",
     category: "photo",
+    subcategory: "Adventure",
     description: "Mountain landscape at sunset showcasing nature's breathtaking beauty",
   },
   {
@@ -53,6 +55,7 @@ const portfolioItems: PortfolioItem[] = [
     image: photo3,
     title: "Urban Stories",
     category: "photo",
+    subcategory: "Events",
     description: "Atmospheric street photography capturing the mood of the city",
   },
   {
