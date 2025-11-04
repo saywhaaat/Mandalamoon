@@ -1,5 +1,6 @@
 import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@/components/ui/visually-hidden";
 import { Button } from "@/components/ui/button";
 import { PortfolioItem } from "./PortfolioGrid";
 
@@ -39,6 +40,10 @@ export default function LightboxModal({
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-7xl w-full h-[90vh] p-0 bg-black/95 border-none" data-testid="lightbox-modal">
+        <VisuallyHidden>
+          <DialogTitle>{item.title}</DialogTitle>
+          <DialogDescription>{item.category} - {item.description || item.title}</DialogDescription>
+        </VisuallyHidden>
         {/* Close Button */}
         <Button
           variant="ghost"

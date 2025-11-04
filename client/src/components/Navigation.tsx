@@ -20,26 +20,24 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/">
-            <a className="text-xl md:text-2xl font-serif font-light tracking-tight hover-elevate active-elevate-2 px-2 py-1 rounded-md" data-testid="link-home">
-              Creative Studio
-            </a>
+          <Link href="/" className="text-xl md:text-2xl font-serif font-light tracking-tight hover-elevate active-elevate-2 px-2 py-1 rounded-md" data-testid="link-home">
+            Creative Studio
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link key={item.path} href={item.path}>
-                <a
-                  className={`text-sm font-medium tracking-wide uppercase transition-colors hover-elevate active-elevate-2 px-3 py-2 rounded-md ${
-                    isActive(item.path)
-                      ? "text-foreground"
-                      : "text-muted-foreground"
-                  }`}
-                  data-testid={`link-nav-${item.name.toLowerCase()}`}
-                >
-                  {item.name}
-                </a>
+              <Link
+                key={item.path}
+                href={item.path}
+                className={`text-sm font-medium tracking-wide uppercase transition-colors hover-elevate active-elevate-2 px-3 py-2 rounded-md ${
+                  isActive(item.path)
+                    ? "text-foreground"
+                    : "text-muted-foreground"
+                }`}
+                data-testid={`link-nav-${item.name.toLowerCase()}`}
+              >
+                {item.name}
               </Link>
             ))}
           </div>
@@ -62,18 +60,18 @@ export default function Navigation() {
         <div className="md:hidden bg-background border-b border-border" data-testid="mobile-menu">
           <div className="px-4 py-4 space-y-2">
             {navItems.map((item) => (
-              <Link key={item.path} href={item.path}>
-                <a
-                  className={`block px-4 py-3 text-base font-medium tracking-wide uppercase rounded-md hover-elevate active-elevate-2 ${
-                    isActive(item.path)
-                      ? "text-foreground bg-accent"
-                      : "text-muted-foreground"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                  data-testid={`link-mobile-${item.name.toLowerCase()}`}
-                >
-                  {item.name}
-                </a>
+              <Link
+                key={item.path}
+                href={item.path}
+                className={`block px-4 py-3 text-base font-medium tracking-wide uppercase rounded-md hover-elevate active-elevate-2 ${
+                  isActive(item.path)
+                    ? "text-foreground bg-accent"
+                    : "text-muted-foreground"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+                data-testid={`link-mobile-${item.name.toLowerCase()}`}
+              >
+                {item.name}
               </Link>
             ))}
           </div>
